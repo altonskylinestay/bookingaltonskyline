@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alton Skyline Admin</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="admin-page">
+
+<!-- LOGIN -->
+
+<div class="admin-login" id="loginBox">
+
+<img
+src="https://i.imgur.com/Wo7g9Qx.png"
+class="admin-logo"
+>
+
+<h1>
+Admin Login
+</h1>
+
+<input
+type="text"
+id="username"
+placeholder="Username"
+>
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+>
+
+<button onclick="loginAdmin()">
+
+Login
+
+</button>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div class="dashboard" id="dashboard">
+
+<div class="dashboard-top">
+
+<h2>
+Alton Skyline CMS
+</h2>
+
+<a href="index.html" class="back-btn">
+Back Website
+</a>
+
+</div>
+
+<div class="dashboard-info">
+
+<div class="dashboard-card">
+
+<h3>
+Total Slot
+</h3>
+
+<p>
+21 Room
+</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>
+Visible Room
+</h3>
+
+<p id="visibleCount">
+1
+</p>
+
+</div>
+
+</div>
+
+<div id="adminRoomList">
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
