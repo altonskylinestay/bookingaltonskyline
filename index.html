@@ -2,6 +2,7 @@
 <html lang="id">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,10 +28,12 @@ ALTON SKYLINE
 </div>
 
 <div class="nav-links">
+
 <a href="#rooms">Rooms</a>
-<a href="#facility">Facilities</a>
+<a href="#facility">Facility</a>
 <a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
+
 </div>
 
 <button class="admin-btn" onclick="openAdmin()">
@@ -42,7 +46,7 @@ Admin
 
 <section class="hero">
 
-<div class="overlay"></div>
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
 
@@ -66,7 +70,7 @@ Booking via WhatsApp
 </a>
 
 <a href="#rooms" class="outline-btn">
-Lihat Kamar
+Explore Room
 </a>
 
 </div>
@@ -77,7 +81,7 @@ Lihat Kamar
 
 <!-- STATS -->
 
-<section class="stats">
+<section class="stats-section">
 
 <div class="stat-box">
 <h2>500+</h2>
@@ -98,7 +102,7 @@ Lihat Kamar
 
 <!-- ROOMS -->
 
-<section class="rooms" id="rooms">
+<section class="rooms-section" id="rooms">
 
 <div class="section-title">
 
@@ -110,88 +114,7 @@ Premium Stay Options
 
 </div>
 
-<div class="room-grid">
-
-<div class="room-card">
-
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
-
-<div class="room-content">
-
-<h3>Studio Skyline</h3>
-
-<div class="price">
-Rp299K / Night
-</div>
-
-<ul>
-<li>✔ Smart TV</li>
-<li>✔ Wifi</li>
-<li>✔ AC</li>
-<li>✔ City View</li>
-</ul>
-
-<a href="https://wa.me/628976660674" class="room-btn">
-Booking
-</a>
-
-</div>
-
-</div>
-
-<div class="room-card">
-
-<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
-
-<div class="room-content">
-
-<h3>Skyline Deluxe</h3>
-
-<div class="price">
-Rp399K / Night
-</div>
-
-<ul>
-<li>✔ Netflix</li>
-<li>✔ Kitchen Set</li>
-<li>✔ Workspace</li>
-<li>✔ Premium Interior</li>
-</ul>
-
-<a href="https://wa.me/628976660674" class="room-btn">
-Booking
-</a>
-
-</div>
-
-</div>
-
-<div class="room-card">
-
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
-
-<div class="room-content">
-
-<h3>Monthly Stay</h3>
-
-<div class="price">
-Special Price
-</div>
-
-<ul>
-<li>✔ Long Stay</li>
-<li>✔ Full Facility</li>
-<li>✔ Fast Wifi</li>
-<li>✔ Strategic Area</li>
-</ul>
-
-<a href="https://wa.me/628976660674" class="room-btn">
-Booking
-</a>
-
-</div>
-
-</div>
+<div class="room-grid" id="roomList">
 
 </div>
 
@@ -199,7 +122,7 @@ Booking
 
 <!-- FACILITY -->
 
-<section class="facility" id="facility">
+<section class="facility-section" id="facility">
 
 <div class="section-title">
 
@@ -213,12 +136,29 @@ Luxury Facilities
 
 <div class="facility-grid">
 
-<div class="facility-card">🏊 Swimming Pool</div>
-<div class="facility-card">🏋 Fitness Center</div>
-<div class="facility-card">📶 High Speed Wifi</div>
-<div class="facility-card">💻 Workspace</div>
-<div class="facility-card">🌃 Skyline View</div>
-<div class="facility-card">🍽 Kitchen Area</div>
+<div class="facility-card">
+🏊 Swimming Pool
+</div>
+
+<div class="facility-card">
+🏋 Fitness Center
+</div>
+
+<div class="facility-card">
+📶 High Speed Wifi
+</div>
+
+<div class="facility-card">
+💻 Workspace
+</div>
+
+<div class="facility-card">
+🌃 Skyline View
+</div>
+
+<div class="facility-card">
+🍽 Kitchen Area
+</div>
 
 </div>
 
@@ -226,7 +166,7 @@ Luxury Facilities
 
 <!-- GALLERY -->
 
-<section class="gallery" id="gallery">
+<section class="gallery-section" id="gallery">
 
 <div class="section-title">
 
@@ -254,7 +194,7 @@ Stay Atmosphere
 
 <!-- CTA -->
 
-<section class="cta" id="contact">
+<section class="cta-section" id="contact">
 
 <h2>
 Ready For Staycation?
@@ -274,7 +214,9 @@ Chat WhatsApp
 
 <footer>
 
-<h3>ALTON SKYLINE STAY</h3>
+<h3>
+ALTON SKYLINE STAY
+</h3>
 
 <p>
 Managed by Nusantara Hospitality Management
@@ -282,17 +224,17 @@ Managed by Nusantara Hospitality Management
 
 </footer>
 
-<!-- ADMIN PANEL -->
+<!-- ADMIN MODAL -->
 
-<div class="admin-panel" id="adminPanel">
+<div class="admin-modal" id="adminModal">
 
 <div class="admin-content">
 
-<h2>Admin Panel</h2>
+<h2>
+Admin Dashboard
+</h2>
 
-<p>
 <div id="adminRooms"></div>
-</p>
 
 <button onclick="closeAdmin()">
 Close
@@ -302,12 +244,15 @@ Close
 
 </div>
 
-<!-- FLOATING WA -->
+<!-- FLOATING -->
 
-<a href="https://wa.me/628976660674" class="floating-wa">
+<a href="https://wa.me/628976660674"
+class="floating-wa">
+
 WA
+
 </a>
-<div id="adminRooms"></div>
+
 <script src="script.js"></script>
 
 </body>
