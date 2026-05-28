@@ -1,5 +1,3 @@
-GANTI TOTAL ISI "script.js"
-
 function adminAlert(){
 
 alert(
