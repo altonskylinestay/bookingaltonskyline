@@ -2,7 +2,6 @@
 <html lang="id">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,7 +13,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -27,17 +25,16 @@
 ALTON SKYLINE
 </div>
 
-<div class="nav-menu">
-
+<div class="nav-links">
 <a href="#rooms">Rooms</a>
-<a href="#facility">Facility</a>
+<a href="#facility">Facilities</a>
+<a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
-
 </div>
 
-<a href="#admin" class="admin-btn">
+<button class="admin-btn" onclick="openAdmin()">
 Admin
-</a>
+</button>
 
 </nav>
 
@@ -45,31 +42,31 @@ Admin
 
 <section class="hero">
 
-<div class="hero-overlay"></div>
+<div class="overlay"></div>
 
 <div class="hero-content">
 
 <div class="hero-tag">
-PREMIUM APARTMENT HOSPITALITY
+PREMIUM SKYLINE EXPERIENCE
 </div>
 
 <h1>
-Luxury Skyline<br>
-Stay Experience
+More Than<br>
+Just A Stay
 </h1>
 
 <p>
-Staycation modern dengan ambience skyline premium dekat UNDIP Semarang.
+Premium apartment staycation Semarang dengan ambience skyline modern dekat UNDIP.
 </p>
 
 <div class="hero-buttons">
 
 <a href="https://wa.me/628976660674" class="gold-btn">
-Booking Sekarang
+Booking via WhatsApp
 </a>
 
 <a href="#rooms" class="outline-btn">
-Explore Room
+Lihat Kamar
 </a>
 
 </div>
@@ -80,7 +77,7 @@ Explore Room
 
 <!-- STATS -->
 
-<section class="stats-section">
+<section class="stats">
 
 <div class="stat-box">
 <h2>500+</h2>
@@ -101,11 +98,11 @@ Explore Room
 
 <!-- ROOMS -->
 
-<section class="rooms-section" id="rooms">
+<section class="rooms" id="rooms">
 
 <div class="section-title">
 
-<p>OUR ROOM</p>
+<p>OUR ROOMS</p>
 
 <h2>
 Premium Stay Options
@@ -123,17 +120,15 @@ Premium Stay Options
 
 <h3>Studio Skyline</h3>
 
-<div class="room-price">
+<div class="price">
 Rp299K / Night
 </div>
 
 <ul>
-
 <li>✔ Smart TV</li>
 <li>✔ Wifi</li>
 <li>✔ AC</li>
 <li>✔ City View</li>
-
 </ul>
 
 <a href="https://wa.me/628976660674" class="room-btn">
@@ -152,17 +147,15 @@ Booking
 
 <h3>Skyline Deluxe</h3>
 
-<div class="room-price">
+<div class="price">
 Rp399K / Night
 </div>
 
 <ul>
-
 <li>✔ Netflix</li>
 <li>✔ Kitchen Set</li>
 <li>✔ Workspace</li>
 <li>✔ Premium Interior</li>
-
 </ul>
 
 <a href="https://wa.me/628976660674" class="room-btn">
@@ -181,17 +174,15 @@ Booking
 
 <h3>Monthly Stay</h3>
 
-<div class="room-price">
+<div class="price">
 Special Price
 </div>
 
 <ul>
-
 <li>✔ Long Stay</li>
 <li>✔ Full Facility</li>
-<li>✔ Strategic Area</li>
 <li>✔ Fast Wifi</li>
-
+<li>✔ Strategic Area</li>
 </ul>
 
 <a href="https://wa.me/628976660674" class="room-btn">
@@ -208,14 +199,14 @@ Booking
 
 <!-- FACILITY -->
 
-<section class="facility-section" id="facility">
+<section class="facility" id="facility">
 
 <div class="section-title">
 
 <p>FACILITIES</p>
 
 <h2>
-Premium Facilities
+Luxury Facilities
 </h2>
 
 </div>
@@ -226,8 +217,36 @@ Premium Facilities
 <div class="facility-card">🏋 Fitness Center</div>
 <div class="facility-card">📶 High Speed Wifi</div>
 <div class="facility-card">💻 Workspace</div>
-<div class="facility-card">🍽 Kitchen Area</div>
 <div class="facility-card">🌃 Skyline View</div>
+<div class="facility-card">🍽 Kitchen Area</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+<div class="section-title">
+
+<p>GALLERY</p>
+
+<h2>
+Stay Atmosphere
+</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200&auto=format&fit=crop">
 
 </div>
 
@@ -235,7 +254,7 @@ Premium Facilities
 
 <!-- CTA -->
 
-<section class="cta-section" id="contact">
+<section class="cta" id="contact">
 
 <h2>
 Ready For Staycation?
@@ -251,34 +270,42 @@ Chat WhatsApp
 
 </section>
 
-<!-- ADMIN -->
+<!-- FOOTER -->
 
-<section class="admin-section" id="admin">
+<footer>
 
-<div class="admin-box">
-
-<h2>
-Admin Panel
-</h2>
+<h3>ALTON SKYLINE STAY</h3>
 
 <p>
-Fitur admin premium coming soon.
+Managed by Nusantara Hospitality Management
 </p>
 
-<button onclick="adminAlert()">
-Open Admin
+</footer>
+
+<!-- ADMIN PANEL -->
+
+<div class="admin-panel" id="adminPanel">
+
+<div class="admin-content">
+
+<h2>Admin Panel</h2>
+
+<p>
+Fitur edit room & dashboard coming soon.
+</p>
+
+<button onclick="closeAdmin()">
+Close
 </button>
 
 </div>
 
-</section>
+</div>
 
-<!-- FLOATING -->
+<!-- FLOATING WA -->
 
 <a href="https://wa.me/628976660674" class="floating-wa">
-
 WA
-
 </a>
 
 <script src="script.js"></script>
