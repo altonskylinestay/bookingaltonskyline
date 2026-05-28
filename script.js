@@ -1,463 +1,136 @@
-/* =========================
-ALTON SKYLINE STAY
-FINAL SCRIPT
-========================= */
+<!DOCTYPE html>
+<html lang="id">
 
-/* ROOM DATABASE */
+<head>
 
-const DEFAULT_ROOMS = [
+<meta charset="UTF-8">
 
-{
-id:1,
-name:"Skyline Studio Room",
-price:"Rp299K / Night",
-image:"assets/room1.jpg",
-desc:"Premium skyline ambience room near UNDIP.",
-visible:true
-},
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-// HIDDEN SLOT
+<title>
+Alton Skyline CMS
+</title>
 
-{
-id:2,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
+<link rel="stylesheet" href="style.css">
 
-{
-id:3,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-{
-id:4,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-{
-id:5,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-{
-id:6,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
+</head>
 
-{
-id:7,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
+<body>
 
-{
-id:8,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
+<div class="admin-page">
 
-{
-id:9,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
+<!-- LOGIN -->
 
-{
-id:10,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:11,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:12,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:13,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:14,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:15,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:16,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:17,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:18,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:19,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:20,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-},
-
-{
-id:21,
-name:"",
-price:"",
-image:"",
-desc:"",
-visible:false
-}
-
-];
-
-/* LOAD */
-
-let rooms =
-JSON.parse(localStorage.getItem("altonRooms"))
-|| DEFAULT_ROOMS;
-
-/* SAVE */
-
-function saveRooms(){
-
-localStorage.setItem(
-"altonRooms",
-JSON.stringify(rooms)
-);
-
-}
-
-/* RENDER PUBLIC ROOM */
-
-function renderRooms(){
-
-const container =
-document.querySelector(".rooms");
-
-if(!container) return;
-
-const roomHTML = rooms
-.filter(room => room.visible)
-.map(room => `
-
-<div class="room-card">
-
-<div class="room-image-wrap">
+<div class="admin-login" id="loginBox">
 
 <img
-src="${room.image}"
-class="room-image"
+src="assets/logo.png"
+class="admin-logo"
 >
 
-</div>
+<h1>
+Admin Login
+</h1>
 
-<div class="room-info">
-
-<div class="room-price">
-${room.price}
-</div>
-
-<p class="room-desc">
-${room.desc}
+<p>
+Alton Skyline Stay CMS
 </p>
 
-<ul class="room-list">
+<input
+type="text"
+id="username"
+placeholder="Username"
+>
 
-<li>✔ Smart TV</li>
-<li>✔ Fast Wifi</li>
-<li>✔ Skyline View</li>
-<li>✔ Premium Interior</li>
-<li>✔ Workspace Area</li>
+<input
+type="password"
+id="password"
+placeholder="Password"
+>
 
-</ul>
+<button onclick="loginAdmin()">
+
+Login
+
+</button>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div class="dashboard" id="dashboard">
+
+<div class="dashboard-top">
+
+<div>
+
+<h2>
+Alton Skyline CMS
+</h2>
+
+<p>
+Luxury Apartment Management
+</p>
+
+</div>
 
 <a
-href="https://wa.me/628976660674?text=Halo%20saya%20ingin%20booking%20${room.name}"
-class="room-btn">
+href="index.html"
+class="back-btn">
 
-Booking Room
+Back Website
 
 </a>
 
 </div>
 
-</div>
+<!-- STATS -->
 
-`).join("");
+<div class="dashboard-info">
 
-container.innerHTML = `
-
-<div class="section-title">
-
-<p>ROOM</p>
-
-<h2>
-Premium Skyline Room
-</h2>
-
-</div>
-
-${roomHTML}
-
-`;
-
-}
-
-/* LOGIN */
-
-function loginAdmin(){
-
-const username =
-document.getElementById("username").value;
-
-const password =
-document.getElementById("password").value;
-
-if(
-username === "admin"
-&&
-password === "admin"
-){
-
-document.getElementById(
-"loginBox"
-).style.display="none";
-
-document.getElementById(
-"dashboard"
-).style.display="block";
-
-renderAdmin();
-
-}else{
-
-alert("Login gagal");
-
-}
-
-}
-
-/* ADMIN RENDER */
-
-function renderAdmin(){
-
-const container =
-document.getElementById("adminRoomList");
-
-if(!container) return;
-
-container.innerHTML = "";
-
-let visibleCount = 0;
-
-rooms.forEach((room,index)=>{
-
-if(room.visible){
-visibleCount++;
-}
-
-container.innerHTML += `
-
-<div class="admin-room">
+<div class="dashboard-card">
 
 <h3>
-ROOM SLOT ${room.id}
+TOTAL SLOT
 </h3>
 
-<input
-type="text"
-id="name-${index}"
-placeholder="Room Name"
-value="${room.name}"
->
-
-<input
-type="text"
-id="price-${index}"
-placeholder="Room Price"
-value="${room.price}"
->
-
-<input
-type="text"
-id="image-${index}"
-placeholder="Image URL"
-value="${room.image}"
->
-
-<textarea
-id="desc-${index}"
-class="admin-textarea"
-placeholder="Description"
->${room.desc}</textarea>
-
 <p>
-STATUS :
-${room.visible ? "VISIBLE" : "HIDDEN"}
+21
 </p>
-
-<button onclick="saveRoom(${index})">
-
-Save Room
-
-</button>
-
-<button onclick="toggleRoom(${index})">
-
-${room.visible ? "Hide Room" : "Show Room"}
-
-</button>
 
 </div>
 
-`;
+<div class="dashboard-card">
 
-});
+<h3>
+VISIBLE ROOM
+</h3>
 
-const count =
-document.getElementById("visibleCount");
+<p id="visibleCount">
+1
+</p>
 
-if(count){
-count.innerText = visibleCount;
-}
+</div>
 
-}
+</div>
 
-/* SAVE ROOM */
+<!-- ROOM LIST -->
 
-function saveRoom(index){
+<div id="adminRoomList">
 
-rooms[index].name =
-document.getElementById(`name-${index}`).value;
+</div>
 
-rooms[index].price =
-document.getElementById(`price-${index}`).value;
+</div>
 
-rooms[index].image =
-document.getElementById(`image-${index}`).value;
+</div>
 
-rooms[index].desc =
-document.getElementById(`desc-${index}`).value;
+<script src="script.js"></script>
 
-saveRooms();
-
-renderAdmin();
-
-renderRooms();
-
-alert("Room updated");
-
-}
-
-/* TOGGLE ROOM */
-
-function toggleRoom(index){
-
-rooms[index].visible =
-!rooms[index].visible;
-
-saveRooms();
-
-renderAdmin();
-
-renderRooms();
-
-}
-
-/* INIT */
-
-renderRooms();
-
-console.log(
-"ALTON SKYLINE FINAL READY"
-);
+</body>
+</html>
