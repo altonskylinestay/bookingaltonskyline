@@ -1,0 +1,272 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alton Skyline Stay</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero" id="hero">
+
+<div class="overlay"></div>
+
+<div class="topbar">
+
+<img
+id="logo"
+class="logo"
+src="https://i.imgur.com/5kQZ1Zm.png">
+
+<button class="menu-btn" onclick="openLogin()">
+☰
+</button>
+
+</div>
+
+<div class="hero-content">
+
+<h1 id="heroTitle">
+Ada malam<br>
+yang terlalu nyaman<br>
+untuk cepat pulang.
+</h1>
+
+<p id="heroDesc">
+Premium Skyline Stay dekat UNDIP Semarang.
+</p>
+
+</div>
+
+</section>
+
+<!-- ROOM -->
+
+<section class="rooms">
+
+<h2 class="section-title">
+Pilihan Kamar
+</h2>
+
+<div class="room-wrap" id="roomWrap"></div>
+
+</section>
+
+<!-- TESTIMONIAL -->
+
+<section class="testimonial">
+
+<h2 class="section-title">
+Apa Kata Mereka?
+</h2>
+
+<div id="testiWrap"></div>
+
+</section>
+
+<!-- MAP -->
+
+<section class="location">
+
+<h2 class="section-title">
+Lokasi
+</h2>
+
+<div class="map-box">
+
+<iframe
+id="mapsFrame"
+src=""
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3 id="footerText"></h3>
+
+<p id="socialText"></p>
+
+</footer>
+
+<!-- FLOATING WA -->
+
+<a
+id="floatingWA"
+class="floating-wa"
+target="_blank">
+
+<div class="wa-text">
+Butuh bantuan?<br>Klik.
+</div>
+
+<div class="wa-btn">
+💬
+</div>
+
+</a>
+
+<!-- LOGIN -->
+
+<div class="login-screen" id="loginScreen">
+
+<div class="login-box">
+
+<h2>Admin Login</h2>
+
+<input
+type="password"
+id="adminPassword"
+placeholder="Masukkan password">
+
+<button onclick="loginAdmin()">
+Masuk Admin
+</button>
+
+</div>
+
+</div>
+
+<!-- ADMIN -->
+
+<div class="admin-panel" id="adminPanel">
+
+<div class="admin-header">
+
+<h2>Admin Panel</h2>
+
+<button onclick="closeAdmin()">
+X
+</button>
+
+</div>
+
+<!-- HERO -->
+
+<div class="admin-card">
+
+<h3>Hero Section</h3>
+
+<input id="adminHeroTitle" placeholder="Judul Hero">
+
+<textarea id="adminHeroDesc" placeholder="Deskripsi"></textarea>
+
+<input id="adminHeroBg" placeholder="URL Background">
+
+<input id="adminLogo" placeholder="URL Logo">
+
+<button onclick="saveHero()">
+Simpan Hero
+</button>
+
+</div>
+
+<!-- WA -->
+
+<div class="admin-card">
+
+<h3>WhatsApp</h3>
+
+<input id="adminWA" placeholder="Nomor WA">
+
+<button onclick="saveWA()">
+Simpan WA
+</button>
+
+</div>
+
+<!-- ROOM -->
+
+<div class="admin-card">
+
+<h3>Tambah Kamar</h3>
+
+<input id="roomName" placeholder="Nama Kamar">
+
+<input id="roomPrice" placeholder="Harga">
+
+<input id="roomImage" placeholder="URL Foto">
+
+<input id="roomFacilities" placeholder="WiFi, Netflix, AC">
+
+<button onclick="addRoom()">
+Tambah Kamar
+</button>
+
+<div id="adminRoomList"></div>
+
+</div>
+
+<!-- TESTI -->
+
+<div class="admin-card">
+
+<h3>Tambah Testimoni</h3>
+
+<input id="testiName" placeholder="Nama">
+
+<input id="testiPhoto" placeholder="URL Foto">
+
+<textarea id="testiText" placeholder="Isi review"></textarea>
+
+<button onclick="addTesti()">
+Tambah Testimoni
+</button>
+
+</div>
+
+<!-- MAP -->
+
+<div class="admin-card">
+
+<h3>Maps</h3>
+
+<input id="adminMaps" placeholder="URL Maps">
+
+<button onclick="saveMaps()">
+Simpan Maps
+</button>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="admin-card">
+
+<h3>Footer</h3>
+
+<input id="adminFooter" placeholder="Managed By">
+
+<input id="adminSocial" placeholder="Social Media">
+
+<button onclick="saveFooter()">
+Simpan Footer
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
