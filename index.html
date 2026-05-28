@@ -11,9 +11,10 @@
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -23,20 +24,27 @@
 
 <nav class="navbar">
 
-<div class="logo">
-ALTON SKYLINE
+<div class="logo-wrap">
+
+<img src="assets/logo.png" class="logo">
+
+<div class="logo-text">
+ALTON SKYLINE STAY
+</div>
+
 </div>
 
 <div class="nav-links">
 
 <a href="#rooms">Rooms</a>
-<a href="#facility">Facility</a>
+
+<a href="#facility">Facilities</a>
+
 <a href="#gallery">Gallery</a>
+
 <a href="#contact">Contact</a>
 
 </div>
-
-
 
 </nav>
 
@@ -44,31 +52,44 @@ ALTON SKYLINE
 
 <section class="hero">
 
+<img
+src="assets/hero.jpg"
+class="hero-bg"
+>
+
 <div class="hero-overlay"></div>
 
 <div class="hero-content">
 
-<div class="hero-tag">
+<div class="hero-badge">
 PREMIUM SKYLINE EXPERIENCE
 </div>
 
 <h1>
-More Than<br>
-Just A Stay
+Luxury Staycation<br>
+Near UNDIP
 </h1>
 
 <p>
-Premium apartment staycation Semarang dengan ambience skyline modern dekat UNDIP.
+Nikmati pengalaman staycation modern dengan ambience skyline premium di Semarang.
 </p>
 
 <div class="hero-buttons">
 
-<a href="https://wa.me/628976660674" class="gold-btn">
-Booking via WhatsApp
+<a
+href="https://wa.me/628976660674"
+class="gold-btn">
+
+Booking Sekarang
+
 </a>
 
-<a href="#rooms" class="outline-btn">
+<a
+href="#rooms"
+class="outline-btn">
+
 Explore Room
+
 </a>
 
 </div>
@@ -77,42 +98,66 @@ Explore Room
 
 </section>
 
-<!-- STATS -->
+<!-- ROOM -->
 
-<section class="stats-section">
-
-<div class="stat-box">
-<h2>500+</h2>
-<p>Guest Stay</p>
-</div>
-
-<div class="stat-box">
-<h2>4.9★</h2>
-<p>Guest Rating</p>
-</div>
-
-<div class="stat-box">
-<h2>24H</h2>
-<p>Fast Response</p>
-</div>
-
-</section>
-
-<!-- ROOMS -->
-
-<section class="rooms-section" id="rooms">
+<section class="rooms" id="rooms">
 
 <div class="section-title">
 
-<p>OUR ROOMS</p>
+<p>ROOM</p>
 
 <h2>
-Premium Stay Options
+Skyline Studio Room
 </h2>
 
 </div>
 
-<div class="room-grid" id="roomList">
+<div class="room-card">
+
+<div class="room-image-wrap">
+
+<img
+src="assets/room1.jpg"
+class="room-image"
+>
+
+</div>
+
+<div class="room-info">
+
+<div class="room-price">
+Rp299K / Night
+</div>
+
+<p class="room-desc">
+
+Premium room dengan ambience skyline modern, cocok untuk staycation, healing, maupun short escape dekat UNDIP.
+
+</p>
+
+<ul class="room-list">
+
+<li>✔ Smart TV</li>
+
+<li>✔ Fast Wifi</li>
+
+<li>✔ Skyline View</li>
+
+<li>✔ Premium Interior</li>
+
+<li>✔ Workspace Area</li>
+
+</ul>
+
+<a
+href="https://wa.me/628976660674?text=Halo%20saya%20ingin%20booking%20Skyline%20Studio%20Room"
+class="room-btn">
+
+Booking Room
+
+</a>
+
+</div>
 
 </div>
 
@@ -120,42 +165,46 @@ Premium Stay Options
 
 <!-- FACILITY -->
 
-<section class="facility-section" id="facility">
+<section class="facility" id="facility">
 
 <div class="section-title">
 
 <p>FACILITIES</p>
 
 <h2>
-Luxury Facilities
+Premium Facilities
 </h2>
 
 </div>
 
 <div class="facility-grid">
 
-<div class="facility-card">
-🏊 Swimming Pool
+<div class="facility-item">
+
+<img src="assets/facility1.jpg">
+
+<div class="facility-overlay">
+
+<h3>
+Swimming Pool
+</h3>
+
 </div>
 
-<div class="facility-card">
-🏋 Fitness Center
 </div>
 
-<div class="facility-card">
-📶 High Speed Wifi
+<div class="facility-item">
+
+<img src="assets/facility2.jpg">
+
+<div class="facility-overlay">
+
+<h3>
+Skyline Ambience
+</h3>
+
 </div>
 
-<div class="facility-card">
-💻 Workspace
-</div>
-
-<div class="facility-card">
-🌃 Skyline View
-</div>
-
-<div class="facility-card">
-🍽 Kitchen Area
 </div>
 
 </div>
@@ -164,7 +213,7 @@ Luxury Facilities
 
 <!-- GALLERY -->
 
-<section class="gallery-section" id="gallery">
+<section class="gallery" id="gallery">
 
 <div class="section-title">
 
@@ -178,37 +227,18 @@ Stay Atmosphere
 
 <div class="gallery-grid">
 
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+<img src="assets/room1.jpg">
 
-<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
+<img src="assets/room2.jpg">
 
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+<img src="assets/room3.jpg">
 
-<img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200&auto=format&fit=crop">
+<img src="assets/room4.jpg">
 
 </div>
 
 </section>
 
-<!-- CTA -->
-
-<section class="cta-section" id="contact">
-
-<h2>
-Ready For Staycation?
-</h2>
-
-<p>
-Booking langsung via WhatsApp untuk fast response.
-</p>
-
-<a href="https://wa.me/628976660674" class="gold-btn">
-Chat WhatsApp
-</a>
-
-</section>
-
-<!-- FOOTER -->
 <!-- REVIEW -->
 
 <section class="review-section">
@@ -232,7 +262,7 @@ Guest Experience
 </h4>
 
 <p>
-Tempatnya aesthetic banget, view malamnya bagus dan vibes staycationnya dapet.
+Tempatnya aesthetic banget, vibes skyline malamnya dapet.
 </p>
 
 </div>
@@ -244,7 +274,7 @@ Tempatnya aesthetic banget, view malamnya bagus dan vibes staycationnya dapet.
 </h4>
 
 <p>
-Kamarnya bersih, modern, cocok buat healing atau nugas dekat UNDIP.
+Interior premium dan nyaman buat healing maupun nugas.
 </p>
 
 </div>
@@ -256,7 +286,7 @@ Kamarnya bersih, modern, cocok buat healing atau nugas dekat UNDIP.
 </h4>
 
 <p>
-Interior premium, akses gampang, dan admin fast response banget.
+Fast response, lokasi strategis, dan ambience luxury banget.
 </p>
 
 </div>
@@ -289,7 +319,34 @@ loading="lazy">
 </div>
 
 </section>
+
+<!-- CTA -->
+
+<section class="cta" id="contact">
+
+<h2>
+Ready For Staycation?
+</h2>
+
+<p>
+Booking langsung via WhatsApp untuk fast response.
+</p>
+
+<a
+href="https://wa.me/628976660674"
+class="gold-btn">
+
+Chat WhatsApp
+
+</a>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
+
+<img src="assets/logo.png" class="footer-logo">
 
 <h3>
 ALTON SKYLINE STAY
@@ -299,31 +356,28 @@ ALTON SKYLINE STAY
 Managed by Nusantara Hospitality Management
 </p>
 
+<div class="footer-social">
+
+<a href="https://instagram.com/alton_skylinestay">
+Instagram
+</a>
+
+<a href="https://tiktok.com/@alton_skylinestay">
+TikTok
+</a>
+
+<a href="https://wa.me/628976660674">
+WhatsApp
+</a>
+
+</div>
+
 </footer>
 
-<!-- ADMIN MODAL -->
+<!-- FLOATING WA -->
 
-<div class="admin-modal" id="adminModal">
-
-<div class="admin-content">
-
-<h2>
-Admin Dashboard
-</h2>
-
-<div id="adminRooms"></div>
-
-<button onclick="closeAdmin()">
-Close
-</button>
-
-</div>
-
-</div>
-
-<!-- FLOATING -->
-
-<a href="https://wa.me/628976660674"
+<a
+href="https://wa.me/628976660674"
 class="floating-wa">
 
 WA
