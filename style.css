@@ -29,12 +29,11 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-z-index:999;
+background:rgba(2,6,23,.6);
 
-background:rgba(2,6,23,.55);
 backdrop-filter:blur(14px);
 
-border-bottom:1px solid rgba(255,255,255,.08);
+z-index:999;
 }
 
 .logo{
@@ -44,12 +43,12 @@ letter-spacing:2px;
 color:#d4af37;
 }
 
-.nav-menu{
+.nav-links{
 display:flex;
 gap:28px;
 }
 
-.nav-menu a{
+.nav-links a{
 text-decoration:none;
 color:white;
 font-size:15px;
@@ -57,11 +56,11 @@ font-size:15px;
 
 .admin-btn{
 background:#d4af37;
-padding:12px 22px;
+border:none;
+padding:12px 24px;
 border-radius:999px;
-text-decoration:none;
-font-weight:600;
-color:#111827;
+font-weight:700;
+cursor:pointer;
 }
 
 /* HERO */
@@ -70,7 +69,7 @@ color:#111827;
 height:100vh;
 
 background:
-linear-gradient(rgba(2,6,23,.82),rgba(2,6,23,.9)),
+linear-gradient(rgba(2,6,23,.78),rgba(2,6,23,.88)),
 url('https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop');
 
 background-size:cover;
@@ -80,35 +79,33 @@ display:flex;
 align-items:center;
 
 padding:0 7%;
-
 position:relative;
 }
 
 .hero-content{
 max-width:700px;
-position:relative;
 z-index:2;
 }
 
 .hero-tag{
 display:inline-block;
 
-padding:10px 20px;
+padding:12px 24px;
 
-border:1px solid rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.2);
 
 border-radius:999px;
 
 margin-bottom:25px;
 
+color:#d4af37;
+
 font-size:13px;
 letter-spacing:2px;
-
-color:#d4af37;
 }
 
 .hero h1{
-font-size:82px;
+font-size:88px;
 line-height:1;
 margin-bottom:25px;
 }
@@ -117,8 +114,8 @@ margin-bottom:25px;
 font-size:18px;
 line-height:1.8;
 color:#d1d5db;
-max-width:600px;
 margin-bottom:40px;
+max-width:600px;
 }
 
 .hero-buttons{
@@ -130,23 +127,30 @@ flex-wrap:wrap;
 .gold-btn{
 background:#d4af37;
 color:#111827;
-padding:16px 32px;
+
+padding:18px 34px;
+
 border-radius:999px;
+
 text-decoration:none;
+
 font-weight:700;
 }
 
 .outline-btn{
 border:1px solid rgba(255,255,255,.3);
-padding:16px 32px;
+
+padding:18px 34px;
+
 border-radius:999px;
+
 text-decoration:none;
 color:white;
 }
 
 /* STATS */
 
-.stats-section{
+.stats{
 padding:90px 7%;
 
 display:grid;
@@ -166,29 +170,30 @@ border:1px solid rgba(255,255,255,.08);
 
 .stat-box h2{
 font-size:46px;
-color:#d4af37;
 margin-bottom:10px;
+color:#d4af37;
 }
 
 /* SECTION */
 
 .section-title{
 margin-bottom:50px;
+text-align:center;
 }
 
 .section-title p{
 color:#d4af37;
 letter-spacing:2px;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
 .section-title h2{
 font-size:52px;
 }
 
-/* ROOM */
+/* ROOMS */
 
-.rooms-section{
+.rooms{
 padding:100px 7%;
 }
 
@@ -229,11 +234,11 @@ font-size:30px;
 margin-bottom:15px;
 }
 
-.room-price{
-font-size:20px;
+.price{
+font-size:22px;
 color:#d4af37;
 margin-bottom:20px;
-font-weight:600;
+font-weight:700;
 }
 
 .room-content ul{
@@ -242,7 +247,7 @@ margin-bottom:30px;
 }
 
 .room-content ul li{
-margin-bottom:14px;
+margin-bottom:12px;
 color:#d1d5db;
 }
 
@@ -250,6 +255,7 @@ color:#d1d5db;
 display:inline-block;
 
 background:#d4af37;
+
 padding:14px 26px;
 
 border-radius:999px;
@@ -262,13 +268,13 @@ color:#111827;
 
 /* FACILITY */
 
-.facility-section{
+.facility{
 padding:100px 7%;
 }
 
 .facility-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:25px;
 }
 
@@ -286,55 +292,99 @@ font-weight:600;
 border:1px solid rgba(255,255,255,.08);
 }
 
+/* GALLERY */
+
+.gallery{
+padding:100px 7%;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.gallery-grid img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:24px;
+}
+
 /* CTA */
 
-.cta-section{
+.cta{
 padding:120px 7%;
 text-align:center;
 }
 
-.cta-section h2{
+.cta h2{
 font-size:64px;
 margin-bottom:20px;
 }
 
-.cta-section p{
+.cta p{
 color:#d1d5db;
 margin-bottom:35px;
 }
 
-/* ADMIN */
+/* FOOTER */
 
-.admin-section{
-padding:100px 7%;
+footer{
+padding:50px 7%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
 }
 
-.admin-box{
+footer h3{
+margin-bottom:10px;
+color:#d4af37;
+}
+
+/* ADMIN */
+
+.admin-panel{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+
+background:rgba(0,0,0,.7);
+
+display:none;
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+}
+
+.admin-content{
 background:#0f172a;
 
 padding:50px;
 
-border-radius:30px;
+border-radius:28px;
 
 text-align:center;
 
-border:1px solid rgba(255,255,255,.08);
+width:90%;
+max-width:450px;
 }
 
-.admin-box h2{
-font-size:42px;
+.admin-content h2{
 margin-bottom:20px;
 }
 
-.admin-box p{
+.admin-content p{
 margin-bottom:25px;
 color:#d1d5db;
 }
 
-.admin-box button{
+.admin-content button{
 background:#d4af37;
 border:none;
-padding:15px 30px;
+padding:14px 26px;
 border-radius:999px;
 font-weight:700;
 cursor:pointer;
@@ -365,8 +415,6 @@ font-size:20px;
 text-decoration:none;
 color:white;
 
-box-shadow:0 10px 30px rgba(0,0,0,.3);
-
 z-index:999;
 }
 
@@ -374,7 +422,7 @@ z-index:999;
 
 @media(max-width:768px){
 
-.nav-menu{
+.nav-links{
 display:none;
 }
 
@@ -388,11 +436,7 @@ max-width:100%;
 }
 
 .hero h1{
-font-size:52px;
-}
-
-.hero p{
-font-size:16px;
+font-size:58px;
 }
 
 .hero-buttons{
@@ -403,7 +447,7 @@ justify-content:center;
 font-size:36px;
 }
 
-.cta-section h2{
+.cta h2{
 font-size:42px;
 }
 
