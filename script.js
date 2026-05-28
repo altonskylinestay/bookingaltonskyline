@@ -1,48 +1,48 @@
-function openAdmin(){
-
-document.getElementById("adminPanel").style.display="flex";
-
-}
-
-function closeAdmin(){
-
-document.getElementById("adminPanel").style.display="none";
-
-}
-
-/* ROOM DATA */
-
-let rooms = [
+const rooms = [
 
 {
-name:"Studio Skyline",
+name:"Studio Room",
 price:"299K",
-status:true
+visible:true
 },
 
 {
 name:"Skyline Deluxe",
 price:"399K",
-status:true
+visible:true
 },
 
 {
 name:"Monthly Stay",
 price:"Special Price",
-status:true
+visible:true
 }
 
 ];
 
-/* RENDER ADMIN */
+function openAdmin(){
 
-function renderAdminRooms(){
+document.getElementById("adminModal").style.display="flex";
 
-let html = "";
+renderAdmin();
+
+}
+
+function closeAdmin(){
+
+document.getElementById("adminModal").style.display="none";
+
+}
+
+function renderAdmin(){
+
+const container = document.getElementById("adminRooms");
+
+container.innerHTML = "";
 
 rooms.forEach((room,index)=>{
 
-html += `
+container.innerHTML += `
 
 <div class="admin-room">
 
@@ -50,22 +50,20 @@ html += `
 
 <p>Price : ${room.price}</p>
 
-<p>Status :
-${room.status ? "Visible" : "Hidden"}
-</p>
+<p>Status : ${room.visible ? "Visible" : "Hidden"}</p>
 
-<input
-type="text"
-placeholder="Edit Price"
-id="price${index}"
->
+<input type="text" id="price-${index}" placeholder="Edit Price">
 
-<button onclick="updatePrice(${index})">
+<button onclick="savePrice(${index})">
+
 Save Price
+
 </button>
 
 <button onclick="toggleRoom(${index})">
-${room.status ? "Hide Room" : "Show Room"}
+
+${room.visible ? "Hide Room" : "Show Room"}
+
 </button>
 
 </div>
@@ -74,43 +72,66 @@ ${room.status ? "Hide Room" : "Show Room"}
 
 });
 
-document.getElementById("adminRooms").innerHTML = html;
+renderRooms();
 
 }
 
-/* UPDATE PRICE */
+function savePrice(index){
 
-function updatePrice(index){
+const newPrice = document.getElementById(`price-${index}`).value;
 
-let value =
-document.getElementById(`price${index}`).value;
+if(newPrice !== ""){
 
-if(value !== ""){
+rooms[index].price = newPrice;
 
-rooms[index].price = value;
-
-alert("Price Updated");
-
-location.reload();
+renderAdmin();
 
 }
 
 }
-
-/* TOGGLE ROOM */
 
 function toggleRoom(index){
 
-rooms[index].status = !rooms[index].status;
+rooms[index].visible = !rooms[index].visible;
 
-alert("Room Status Updated");
-
-location.reload();
+renderAdmin();
 
 }
 
-/* LOAD */
+function renderRooms(){
 
-renderAdminRooms();
+const roomContainer = document.getElementById("roomList");
 
-console.log("ALTON SKYLINE ADMIN READY");
+if(!roomContainer) return;
+
+roomContainer.innerHTML = "";
+
+rooms.forEach(room=>{
+
+if(room.visible){
+
+roomContainer.innerHTML += `
+
+<div class="room-card">
+
+<h3>${room.name}</h3>
+
+<p>${room.price}</p>
+
+<a href="https://wa.me/628976660674">
+
+Booking Sekarang
+
+</a>
+
+</div>
+
+`;
+
+}
+
+});
+
+}
+
+renderRooms();
