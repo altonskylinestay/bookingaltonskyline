@@ -1,8 +1,12 @@
-function adminAlert(){
+function openAdmin(){
 
-alert(
-"Admin panel premium akan diaktifkan pada update berikutnya."
-);
+document.getElementById("adminPanel").style.display="flex";
+
+}
+
+function closeAdmin(){
+
+document.getElementById("adminPanel").style.display="none";
 
 }
 
