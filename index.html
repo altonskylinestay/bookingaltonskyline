@@ -1,251 +1,124 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alton Skyline Stay</title>
 
-body{
-background:#020617;
-color:white;
-}
+<link rel="stylesheet" href="style.css">
 
-.hero{
-height:100vh;
-position:relative;
-overflow:hidden;
-}
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-.hero-bg{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+</head>
+<body>
 
-.overlay{
-position:absolute;
-inset:0;
-background:linear-gradient(to bottom,rgba(0,0,0,.6),rgba(2,6,23,.95));
-}
+<header class="header">
+<div class="logo">
+<img id="logoImg" src="https://i.imgur.com/8Km9tLL.png">
+</div>
 
-.hero-content{
-position:absolute;
-inset:0;
-display:flex;
-flex-direction:column;
-justify-content:center;
-padding:30px;
-z-index:2;
-}
+<button class="menu-btn" onclick="toggleAdmin()">
+<i class="fas fa-bars"></i>
+</button>
+</header>
 
-.logo{
-width:120px;
-margin-bottom:25px;
-}
+<section class="hero">
+<img id="heroImage"
+src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200">
 
-.hero h1{
-font-size:54px;
-line-height:1;
-color:#facc15;
-margin-bottom:20px;
-}
+<div class="hero-overlay">
+<h1 id="heroTitle">Premium Stay in Semarang</h1>
+<p id="heroDesc">
+Nikmati pengalaman menginap modern dekat UNDIP.
+</p>
+</div>
+</section>
 
-.hero p{
-max-width:340px;
-color:#ddd;
-line-height:1.7;
-}
+<section class="rooms">
 
-.section{
-padding:25px;
-}
+<h2>Pilihan Kamar</h2>
 
-.section-title{
-font-size:30px;
-margin-bottom:25px;
-color:#facc15;
-}
+<div id="roomContainer"></div>
 
-.room-card{
-background:#0f172a;
-border-radius:24px;
-overflow:hidden;
-margin-bottom:25px;
-border:1px solid rgba(255,255,255,.08);
-}
+</section>
 
-.room-card img{
-width:100%;
-height:260px;
-object-fit:cover;
-}
+<div class="floating-help">
+<p>Butuh bantuan? klik.</p>
 
-.room-content{
-padding:20px;
-}
+<a id="waFloat"
+href="https://wa.me/628976660674"
+target="_blank">
 
-.room-title{
-font-size:26px;
-margin-bottom:10px;
-}
+<i class="fab fa-whatsapp"></i>
 
-.room-price{
-font-size:28px;
-color:#facc15;
-margin-bottom:15px;
-}
+</a>
+</div>
 
-.room-facility{
-color:#bbb;
-margin-bottom:20px;
-}
+<div class="admin-panel" id="adminPanel">
 
-.booking-box{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
+<div class="admin-box">
 
-.booking-box input{
-height:52px;
-padding:0 15px;
-background:#1e293b;
-border:none;
-border-radius:14px;
-color:white;
-}
+<h2>Admin Panel</h2>
 
-.booking-btn{
-height:55px;
-background:#facc15;
-border:none;
-border-radius:16px;
-font-weight:bold;
-font-size:16px;
-}
+<input type="password"
+id="adminPassword"
+placeholder="Password">
 
-.testi-card{
-background:#0f172a;
-padding:20px;
-border-radius:20px;
-margin-bottom:20px;
-}
+<button onclick="loginAdmin()">
+Login
+</button>
 
-.testi-name{
-font-size:18px;
-margin-bottom:10px;
-color:#facc15;
-}
+<div id="adminContent" style="display:none;">
 
-iframe{
-width:100%;
-height:300px;
-border:none;
-border-radius:20px;
-}
+<h3>Hero</h3>
 
-footer{
-padding:50px 20px 120px;
-text-align:center;
-color:#aaa;
-line-height:1.8;
-}
+<input id="editTitle"
+placeholder="Judul Hero">
 
-.floating-wa{
-position:fixed;
-right:20px;
-bottom:20px;
-width:65px;
-height:65px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-z-index:999;
-}
+<textarea id="editDesc"
+placeholder="Deskripsi"></textarea>
 
-.wa-text{
-position:fixed;
-right:20px;
-bottom:95px;
-background:white;
-color:black;
-padding:10px 14px;
-border-radius:14px;
-font-size:13px;
-z-index:999;
-}
+<input id="editHeroImage"
+placeholder="Link Gambar Hero">
 
-.admin-btn{
-position:fixed;
-top:20px;
-right:20px;
-width:50px;
-height:50px;
-border:none;
-border-radius:50%;
-background:#facc15;
-font-size:20px;
-z-index:999;
-}
+<button onclick="saveHero()">
+Simpan Hero
+</button>
 
-.admin-panel{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.85);
-display:none;
-align-items:center;
-justify-content:center;
-padding:20px;
-z-index:9999;
-overflow:auto;
-}
+<hr>
 
-.admin-box{
-width:100%;
-max-width:460px;
-background:#0f172a;
-padding:20px;
-border-radius:24px;
-}
+<h3>Tambah Kamar</h3>
 
-.admin-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
+<input id="roomName"
+placeholder="Nama kamar">
 
-.admin-box input{
-width:100%;
-margin-bottom:12px;
-padding:14px;
-background:#1e293b;
-border:none;
-border-radius:14px;
-color:white;
-}
+<input id="roomPrice"
+placeholder="Harga">
 
-.admin-box button{
-width:100%;
-height:50px;
-margin-bottom:12px;
-background:#facc15;
-border:none;
-border-radius:14px;
-font-weight:bold;
-}
+<input id="roomImage"
+placeholder="Link gambar">
 
-.room-admin-item{
-background:#1e293b;
-padding:15px;
-border-radius:16px;
-margin-bottom:12px;
-}
+<select id="roomStatus">
+<option value="true">Tampilkan</option>
+<option value="false">Hide</option>
+</select>
 
-.room-admin-item button{
-margin-top:10px;
-}
+<button onclick="addRoom()">
+Tambah Kamar
+</button>
+
+<hr>
+
+<div id="adminRooms"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
