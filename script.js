@@ -1,7 +1,9 @@
 /* =========================
 ALTON SKYLINE STAY
-FINAL SYSTEM
+FINAL SCRIPT
 ========================= */
+
+/* ROOM DATABASE */
 
 const DEFAULT_ROOMS = [
 
@@ -9,12 +11,12 @@ const DEFAULT_ROOMS = [
 id:1,
 name:"Skyline Studio Room",
 price:"Rp299K / Night",
-image:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+image:"assets/room1.jpg",
 desc:"Premium skyline ambience room near UNDIP.",
 visible:true
 },
 
-// 20 SLOT HIDDEN
+// HIDDEN SLOT
 
 {
 id:2,
@@ -198,13 +200,13 @@ visible:false
 
 ];
 
+/* LOAD */
+
 let rooms =
 JSON.parse(localStorage.getItem("altonRooms"))
 || DEFAULT_ROOMS;
 
-/* =========================
-SAVE
-========================= */
+/* SAVE */
 
 function saveRooms(){
 
@@ -215,34 +217,31 @@ JSON.stringify(rooms)
 
 }
 
-/* =========================
-RENDER PUBLIC ROOM
-========================= */
+/* RENDER PUBLIC ROOM */
 
 function renderRooms(){
 
 const container =
-document.getElementById("roomContainer");
+document.querySelector(".rooms");
 
 if(!container) return;
 
-container.innerHTML = "";
-
-rooms.forEach(room=>{
-
-if(room.visible){
-
-container.innerHTML += `
+const roomHTML = rooms
+.filter(room => room.visible)
+.map(room => `
 
 <div class="room-card">
 
-<img src="${room.image}">
+<div class="room-image-wrap">
 
-<div class="room-content">
+<img
+src="${room.image}"
+class="room-image"
+>
 
-<h3>
-${room.name}
-</h3>
+</div>
+
+<div class="room-info">
 
 <div class="room-price">
 ${room.price}
@@ -252,12 +251,13 @@ ${room.price}
 ${room.desc}
 </p>
 
-<ul>
+<ul class="room-list">
 
 <li>✔ Smart TV</li>
-<li>✔ Premium Interior</li>
 <li>✔ Fast Wifi</li>
-<li>✔ Skyline Ambience</li>
+<li>✔ Skyline View</li>
+<li>✔ Premium Interior</li>
+<li>✔ Workspace Area</li>
 
 </ul>
 
@@ -265,7 +265,7 @@ ${room.desc}
 href="https://wa.me/628976660674?text=Halo%20saya%20ingin%20booking%20${room.name}"
 class="room-btn">
 
-Booking
+Booking Room
 
 </a>
 
@@ -273,17 +273,27 @@ Booking
 
 </div>
 
+`).join("");
+
+container.innerHTML = `
+
+<div class="section-title">
+
+<p>ROOM</p>
+
+<h2>
+Premium Skyline Room
+</h2>
+
+</div>
+
+${roomHTML}
+
 `;
 
 }
 
-});
-
-}
-
-/* =========================
-ADMIN LOGIN
-========================= */
+/* LOGIN */
 
 function loginAdmin(){
 
@@ -296,7 +306,7 @@ document.getElementById("password").value;
 if(
 username === "admin"
 &&
-password === "skyline2026"
+password === "admin"
 ){
 
 document.getElementById(
@@ -317,9 +327,7 @@ alert("Login gagal");
 
 }
 
-/* =========================
-RENDER ADMIN
-========================= */
+/* ADMIN RENDER */
 
 function renderAdmin(){
 
@@ -330,7 +338,13 @@ if(!container) return;
 
 container.innerHTML = "";
 
+let visibleCount = 0;
+
 rooms.forEach((room,index)=>{
+
+if(room.visible){
+visibleCount++;
+}
 
 container.innerHTML += `
 
@@ -363,8 +377,8 @@ value="${room.image}"
 
 <textarea
 id="desc-${index}"
-placeholder="Room Description"
 class="admin-textarea"
+placeholder="Description"
 >${room.desc}</textarea>
 
 <p>
@@ -390,11 +404,16 @@ ${room.visible ? "Hide Room" : "Show Room"}
 
 });
 
+const count =
+document.getElementById("visibleCount");
+
+if(count){
+count.innerText = visibleCount;
 }
 
-/* =========================
-SAVE ROOM
-========================= */
+}
+
+/* SAVE ROOM */
 
 function saveRoom(index){
 
@@ -414,13 +433,13 @@ saveRooms();
 
 renderAdmin();
 
+renderRooms();
+
 alert("Room updated");
 
 }
 
-/* =========================
-TOGGLE ROOM
-========================= */
+/* TOGGLE ROOM */
 
 function toggleRoom(index){
 
@@ -431,11 +450,11 @@ saveRooms();
 
 renderAdmin();
 
+renderRooms();
+
 }
 
-/* =========================
-INIT
-========================= */
+/* INIT */
 
 renderRooms();
 
