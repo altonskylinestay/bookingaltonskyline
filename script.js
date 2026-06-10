@@ -1,136 +1,123 @@
-<!DOCTYPE html>
-<html lang="id">
+const adminUser = "admin";
+const adminPass = "alton123";
 
-<head>
+const rooms = [
+{
+id:1,
+name:"Skyline Studio Room",
+price:"299000",
+desc:"Premium room dengan ambience skyline modern, cocok untuk staycation, healing, maupun short escape dekat UNDIP.",
+visible:true
+}
+];
 
-<meta charset="UTF-8">
+function loginAdmin(){
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+const user =
+document.getElementById("username").value;
 
-<title>
-Alton Skyline CMS
-</title>
+const pass =
+document.getElementById("password").value;
 
-<link rel="stylesheet" href="style.css">
+if(
+user === adminUser &&
+pass === adminPass
+){
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+document.getElementById("loginBox").style.display="none";
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+document.getElementById("dashboard").style.display="block";
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+renderRooms();
 
-</head>
+}else{
 
-<body>
+alert("Username atau password salah");
 
-<div class="admin-page">
+}
 
-<!-- LOGIN -->
+}
 
-<div class="admin-login" id="loginBox">
+function renderRooms(){
 
-<img
-src="assets/logo.png"
-class="admin-logo"
->
+const container =
+document.getElementById("adminRoomList");
 
-<h1>
-Admin Login
-</h1>
+if(!container) return;
 
-<p>
-Alton Skyline Stay CMS
+container.innerHTML="";
+
+let visible = 0;
+
+rooms.forEach(room=>{
+
+if(room.visible) visible++;
+
+container.innerHTML += `
+<div class="admin-room">
+
+<h3>${room.name}</h3>
+
+<p>Status :
+<b>
+${room.visible ? "VISIBLE" : "HIDDEN"}
+</b>
 </p>
 
 <input
-type="text"
-id="username"
-placeholder="Username"
+id="price-${room.id}"
+value="${room.price}"
 >
 
-<input
-type="password"
-id="password"
-placeholder="Password"
->
+<textarea
+class="admin-textarea"
+id="desc-${room.id}"
+>${room.desc}</textarea>
 
-<button onclick="loginAdmin()">
+<button onclick="saveRoom(${room.id})">
+Save Changes
+</button>
 
-Login
-
+<button onclick="toggleRoom(${room.id})">
+${room.visible ? "Hide Room" : "Show Room"}
 </button>
 
 </div>
+`;
 
-<!-- DASHBOARD -->
+});
 
-<div class="dashboard" id="dashboard">
+const count =
+document.getElementById("visibleCount");
 
-<div class="dashboard-top">
+if(count){
+count.innerText = visible;
+}
 
-<div>
+}
 
-<h2>
-Alton Skyline CMS
-</h2>
+function saveRoom(id){
 
-<p>
-Luxury Apartment Management
-</p>
+const room =
+rooms.find(r=>r.id===id);
 
-</div>
+room.price =
+document.getElementById(`price-${id}`).value;
 
-<a
-href="index.html"
-class="back-btn">
+room.desc =
+document.getElementById(`desc-${id}`).value;
 
-Back Website
+alert("Data berhasil disimpan");
 
-</a>
+}
 
-</div>
+function toggleRoom(id){
 
-<!-- STATS -->
+const room =
+rooms.find(r=>r.id===id);
 
-<div class="dashboard-info">
+room.visible = !room.visible;
 
-<div class="dashboard-card">
+renderRooms();
 
-<h3>
-TOTAL SLOT
-</h3>
-
-<p>
-21
-</p>
-
-</div>
-
-<div class="dashboard-card">
-
-<h3>
-VISIBLE ROOM
-</h3>
-
-<p id="visibleCount">
-1
-</p>
-
-</div>
-
-</div>
-
-<!-- ROOM LIST -->
-
-<div id="adminRoomList">
-
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+}
