@@ -6,14 +6,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Alton Skyline Admin</title>
+<title>Alton Skyline CMS</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -26,13 +26,17 @@
 <div class="admin-login" id="loginBox">
 
 <img
-src="https://i.imgur.com/Wo7g9Qx.png"
+src="assets/logo.png"
 class="admin-logo"
 >
 
 <h1>
 Admin Login
 </h1>
+
+<p>
+Alton Skyline Stay CMS
+</p>
 
 <input
 type="text"
@@ -60,26 +64,40 @@ Login
 
 <div class="dashboard-top">
 
+<div>
+
 <h2>
 Alton Skyline CMS
 </h2>
 
-<a href="index.html" class="back-btn">
+<p>
+Luxury Apartment Management
+</p>
+
+</div>
+
+<a
+href="index.html"
+class="back-btn">
+
 Back Website
+
 </a>
 
 </div>
+
+<!-- STATS -->
 
 <div class="dashboard-info">
 
 <div class="dashboard-card">
 
 <h3>
-Total Slot
+TOTAL SLOT
 </h3>
 
 <p>
-21 Room
+21
 </p>
 
 </div>
@@ -87,16 +105,32 @@ Total Slot
 <div class="dashboard-card">
 
 <h3>
-Visible Room
+VISIBLE ROOM
 </h3>
 
 <p id="visibleCount">
-1
+0
 </p>
 
 </div>
 
 </div>
+
+<!-- ADD ROOM -->
+
+<div style="margin-bottom:30px;">
+
+<button
+onclick="addRoom()"
+class="back-btn">
+
++ Tambah Kamar
+
+</button>
+
+</div>
+
+<!-- ROOM LIST -->
 
 <div id="adminRoomList">
 
